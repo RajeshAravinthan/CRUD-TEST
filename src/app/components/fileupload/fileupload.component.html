@@ -1,0 +1,13 @@
+<div class="card card-body mb-3">
+  <br />
+  <p>Choose png/JPG below 1mb only</p>
+  <input type="file" (change)="upload($event.target.files)" />
+
+
+  <ng-container *ngIf="uploadSuccess">
+    Upload Successful
+  </ng-container>
+  <div *ngFor="let obj of data">
+    <a [href]="getSantizeUrl(obj.file)" download="{{obj.name}}">{{getSantizeUrl(obj.name)}}</a>
+  </div>
+</div>

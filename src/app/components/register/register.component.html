@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="container">
+          <h2>Register Form</h2>
+          <form name="register" (ngSubmit)="RegisterUser()" #RegistrationFormData="ngForm">
+            <div class="form-group">
+              <label for="firtname">First Name: *</label>
+              <input type="text" class="form-control" id="firstname" ngModel #firstname="ngModel"
+                placeholder="Enter First Name" name="firstname" required>
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name: *</label>
+              <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" ngModel
+                #lastname="ngModel" name="lastname" required>
+
+            </div>
+            <div class="form-group">
+              <label for="email">Email: *</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" ngModel #email="ngModel"
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                name="email" required>
+              <div>
+                <span class="help-block helper" *ngIf="!email.valid && email.touched || submit && !email.valid">Please
+                  Enter Valid Email</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile: *</label>
+              <input type="number" class="form-control" id="mobile" placeholder="Enter Mobile number"
+                pattern="^((\\+91-?)|0)?[0-9]{10}$" ngModel #mobile="ngModel" name="mobile" required>
+              <div>
+                <span class="help-block helper"
+                  *ngIf="!mobile.valid && mobile.touched || submit && !mobile.valid">Please Enter
+                  Valid Mobile</span>
+              </div>
+            </div>
+            <div class="checkbox">
+              <label>Gender : *</label>
+              <br>
+              <label> <input type="radio" ngModel #gender="ngModel" name="gender" value="male" required> Male </label>
+              <label><input type="radio" name="gender" ngModel #gender="ngModel" value="female" required> Female</label>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Address: *</label>
+              <textarea class="form-control" rows="5" id="address" placeholder="Enter Address" name="address"
+                required></textarea>
+
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password: *</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ngModel
+                #password="ngModel" required minlength="8">
+              <div>
+                <span class="help-block helper"
+                  *ngIf="!password.valid && password.touched || submit && !password.valid">Please Enter Valid
+                  password</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confrmpwd">Confirm Password: *</label>
+              <input type="password" class="form-control" id="confrmpwd" minlength="8"
+                placeholder="Enter Confirm Password" ngModel #confrmpwd="ngModel" name="confpwd" required>
+              <div>
+                <span class="help-block helper"
+                  *ngIf="!confrmpwd.valid && confrmpwd.touched || submit && !confrmpwd.valid">Please Enter Valid
+                  Confirm password</span>
+                <span *ngIf="passError" class="help-block helper">Password Mismatch</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

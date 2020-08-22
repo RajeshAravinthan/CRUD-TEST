@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">GoDB</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard" *ngIf="api.loggedIn">
+        Dashboard
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="file_upload" *ngIf="api.loggedIn">
+        File Upload
+      </a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="register" *ngIf="!api.loggedIn">
+        Register
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="" *ngIf="!api.loggedIn">
+        Login
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logout()" href="#" *ngIf="api.loggedIn">
+        LogOut
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

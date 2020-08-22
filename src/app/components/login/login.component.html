@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="container">
+          <h2>Login GoDB</h2>
+          <form name="login" (ngSubmit)="autheticateUser()" #logInFormData="ngForm">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" placeholder="Enter Email" ngModel name="email" #email="ngModel"
+                required>
+
+              <div>
+                <span class="help-block helper" *ngIf="!email.valid && email.touched">Please Enter Valid Email</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" ngModel name="pwd"
+                required>
+              <span class="help-block helper" *ngIf="!email.valid && email.touched">Please Enter Password</span>
+            </div>
+
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
