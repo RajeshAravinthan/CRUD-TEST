@@ -16,4 +16,7 @@ export class AppComponent {
   logout = () => {
     sessionStorage.removeItem('login');
   };
+  routeMenu = (url) => {
+    this.router.navigateByUrl(`/${url}`);
+  };
 }

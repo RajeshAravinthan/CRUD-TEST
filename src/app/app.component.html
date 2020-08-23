@@ -4,24 +4,24 @@
       <a class="nav-link" href="#">GoDB</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="dashboard" *ngIf="api.loggedIn">
+      <a class="nav-link" (click)="routeMenu('dashboard')" *ngIf="api.loggedIn">
         Dashboard
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="file_upload" *ngIf="api.loggedIn">
+      <a class="nav-link" (click)="routeMenu('file_upload')" *ngIf="api.loggedIn">
         File Upload
       </a>
     </li>
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link" href="register" *ngIf="!api.loggedIn">
+      <a class="nav-link" (click)="routeMenu('register')" *ngIf="!api.loggedIn">
         Register
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="" *ngIf="!api.loggedIn">
+      <a class="nav-link" (click)="routeMenu('login')" *ngIf="!api.loggedIn">
         Login
       </a>
     </li>
